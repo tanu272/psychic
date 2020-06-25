@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>calc</title>
+    <!-- for styling -->
+    <style>
+        body {
+            font-family: Roboto;
+            background: #8E0E00;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to bottom, #8E0E00, #1F1C18);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to bottom, #8E0E00, #1F1C18);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+
+        #container {
+            height: 525px;
+            width: 400px;
+            margin: 100px auto;
+            background-color: lightgray;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            align-content:center;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+        }
+
+        table {
+            height: 400px;
+            width: 350px;
+            padding: 20px 20px 20px;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 10px 10px;
+            align-content: center;
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: normal;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        h1 {
+            background: #1F030C;
+            color: white;
+            margin: 0;
+            padding: 10px 10px;
+            align-content: center;
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: normal;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        p {
+            padding-left: 20px;
+        }
+
+        form input[type="text"] {
+            width =90px;
+        }
+
+        input {
+            padding-left: 20px;
+        }
+
+        button {
+            text-transform: uppercase;
+            font-weight: bold;
+            display: block;
+            margin: 30px auto;
+            background: #AD133A;
+            border-radius: 5px;
+            width: 20px;
+            height: 50px;
+            font-size: 17px;
+            color: white;
+        }
+
+            button:hover {
+                background: #4c2827;
+                border-bottom-color: #111;
+            }
+
+            button:active {
+                position: relative;
+                top: 1px;
+            }
+            
+       .title {
+            border-radius: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+            width: 210px;
+            color: #ff4456;
+            border: solid black 1px;
+        }
+
+        input[type="button"] {
+            border-radius: 10px;
+            background-color: rebeccapurple;
+            color: gainsboro;
+            border-color: white;
+            width: 100%;
+        }
+
+        input[type="text"] {
+            border-radius: 10px;
+            text-align: right;
+            background-color: white;
+            border-color: black;
+            width: 90%
+        }
+    </style>
+
+    <script>
+        //function for displaying values
+        function dis(val) {
+            document.getElementById("first").value += val
+        }
+        //function for evaluation
+        function solve() {
+            let x = document.getElementById("first").value
+            let y = eval(x)
+            document.getElementById("first").value = y
+        }
+        //function for clearing the display
+        function clr() {
+            document.getElementById("first").value = ""
+        }
+    </script>
+</head>
+<!-- create table -->
+<body>
+    
+    <div id="container" align="center">
+        <div class="text-center">
+        <h1 align ="center">Simple Calculator</h1>
+        <br /><br />
+        <table border="1" align="center">
+        <tr>
+            <td><input type="button" value="c" onclick="clr()" /> </td>
+            <td colspan="3"><input type="text" id="first" /></td>
+            <!-- clr() function will call clr to clear all value -->
+        </tr>
+        <tr>
+            <!-- creating buttons and assigning values-->
+            <td><input type="button" value="+" onclick="dis('+')" /> </td>
+            <td><input type="button" value="1" onclick="dis('1')" /> </td>
+            <td><input type="button" value="2" onclick="dis('2')" /> </td>
+            <td><input type="button" value="3" onclick="dis('3')" /> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="-" onclick="dis('-')" /> </td>
+            <td><input type="button" value="4" onclick="dis('4')" /> </td>
+            <td><input type="button" value="5" onclick="dis('5')" /> </td>
+            <td><input type="button" value="6" onclick="dis('6')" /> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="*" onclick="dis('*')" /> </td>
+            <td><input type="button" value="7" onclick="dis('7')" /> </td>
+            <td><input type="button" value="8" onclick="dis('8')" /> </td>
+            <td><input type="button" value="9" onclick="dis('9')" /> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="/" onclick="dis('/')" /> </td>
+            <td><input type="button" value="." onclick="dis('.')" /> </td>
+            <td><input type="button" value="0" onclick="dis('0')" /> </td>
+            <!-- Evaluating function call eval()-->
+            <td><input type="button" value="=" onclick="solve()" /> </td>
+        </tr>
+        </table>
+        </div>
+    </div>
+
+</body>
+</html>
